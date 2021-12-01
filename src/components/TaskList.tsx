@@ -16,10 +16,19 @@ export function TaskList() {
 
   function handleCreateNewTask() {
   
-    if (newTaskTitle == '') {
-      alert('Por favor informe uma Task');
-    } else {
+    // if (newTaskTitle == '') {
+    //   alert('Por favor informe uma Task');
+    // } else {
 
+    //   const newTask = {
+    //     "id": Math.random(),
+    //     "title": newTaskTitle,
+    //     "isComplete": false
+    //   };
+    //   setTasks(oldTask => [...oldTask, newTask]);
+    //   setNewTaskTitle('')
+    // }
+    if (!!newTaskTitle) {
       const newTask = {
         "id": Math.random(),
         "title": newTaskTitle,
@@ -27,7 +36,8 @@ export function TaskList() {
       };
       setTasks(oldTask => [...oldTask, newTask]);
       setNewTaskTitle('')
-    }
+    } 
+
     
   }
 
