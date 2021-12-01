@@ -15,16 +15,17 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
-
+  
     if (newTaskTitle == '') {
       alert('Por favor informe uma Task');
     } else {
+
       const newTask = {
         "id": Math.random(),
         "title": newTaskTitle,
         "isComplete": false
       };
-      setTasks(oldState => [...oldState, newTask]);
+      setTasks(oldTask => [...oldTask, newTask]);
       setNewTaskTitle('')
     }
     
@@ -32,18 +33,18 @@ export function TaskList() {
 
   function handleToggleTaskCompletion(id: number) {
 
-    const newTasks = tasks.map(task => task.id == id ? {
+    const updatedToggleTasks = tasks.map(task => task.id == id ? {
       ...task,
       isComplete: !task.isComplete
     } : task);
-     setTasks(newTasks);
+     setTasks(updatedToggleTasks);
   }
 
   function handleRemoveTask(id: number) {
-    const newTasks = tasks.filter(task => task.id != id);
-    if (window.confirm('Are you sure you wish to delete this item?')) {
-      setTasks(newTasks);
-    }
+    const removeTasks = tasks.filter(task => task.id != id);
+    // if (window.confirm('Are you sure you wish to delete this item?')) {
+      setTasks(removeTasks);
+    // }
  
   }
 
