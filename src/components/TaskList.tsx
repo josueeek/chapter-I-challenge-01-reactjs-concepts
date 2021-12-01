@@ -16,18 +16,6 @@ export function TaskList() {
 
   function handleCreateNewTask() {
   
-    // if (newTaskTitle == '') {
-    //   alert('Por favor informe uma Task');
-    // } else {
-
-    //   const newTask = {
-    //     "id": Math.random(),
-    //     "title": newTaskTitle,
-    //     "isComplete": false
-    //   };
-    //   setTasks(oldTask => [...oldTask, newTask]);
-    //   setNewTaskTitle('')
-    // }
     if (!!newTaskTitle) {
       const newTask = {
         "id": Math.random(),
@@ -52,9 +40,8 @@ export function TaskList() {
 
   function handleRemoveTask(id: number) {
     const removeTasks = tasks.filter(task => task.id != id);
-    // if (window.confirm('Are you sure you wish to delete this item?')) {
-      setTasks(removeTasks);
-    // }
+
+    setTasks(removeTasks);
  
   }
 
